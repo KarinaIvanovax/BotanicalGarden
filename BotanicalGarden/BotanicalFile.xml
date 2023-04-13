@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Plant name="Вульфения каринтская">
+		<Id>1</Id>
+		<Colour>"вечнозеленая"</Colour>
+		<From>"Альпы, Албания"</From>
+	</Plant>
+</root>
