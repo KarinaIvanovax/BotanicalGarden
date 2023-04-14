@@ -1,6 +1,6 @@
 ﻿namespace BotanicalGarden
 {
-    partial class Form1
+    partial class BG
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BG));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Расцветка");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Название");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Откуда");
@@ -43,13 +43,20 @@
             treeNode5,
             treeNode6,
             treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Информация");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Цена");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Маршрут");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Часы работы");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Информация", new System.Windows.Forms.TreeNode[] {
+            treeNode9,
+            treeNode10,
+            treeNode11});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ITable = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -58,6 +65,8 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ITable)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +93,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(86, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(83, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(142, 144);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -94,7 +103,7 @@
             // treeView1
             // 
             this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(229)))), ((int)(((byte)(208)))));
-            this.treeView1.Location = new System.Drawing.Point(27, 197);
+            this.treeView1.Location = new System.Drawing.Point(24, 187);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "Colour";
             treeNode1.Text = "Расцветка";
@@ -112,12 +121,18 @@
             treeNode7.Text = "Откуда";
             treeNode8.Name = "Animals";
             treeNode8.Text = "Животные";
-            treeNode9.Name = "Information";
-            treeNode9.Text = "Информация";
+            treeNode9.Name = "Price";
+            treeNode9.Text = "Цена";
+            treeNode10.Name = "Route";
+            treeNode10.Text = "Маршрут";
+            treeNode11.Name = "WorkHours";
+            treeNode11.Text = "Часы работы";
+            treeNode12.Name = "Information";
+            treeNode12.Text = "Информация";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode4,
             treeNode8,
-            treeNode9});
+            treeNode12});
             this.treeView1.Size = new System.Drawing.Size(260, 139);
             this.treeView1.TabIndex = 0;
             // 
@@ -146,12 +161,26 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(229)))), ((int)(((byte)(208)))));
+            this.tabPage2.Controls.Add(this.ITable);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(480, 417);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Показать";
+            // 
+            // ITable
+            // 
+            this.ITable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(248)))), ((int)(((byte)(232)))));
+            this.ITable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ITable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ITable.Location = new System.Drawing.Point(3, 3);
+            this.ITable.Name = "ITable";
+            this.ITable.RowHeadersWidth = 51;
+            this.ITable.RowTemplate.Height = 29;
+            this.ITable.Size = new System.Drawing.Size(474, 411);
+            this.ITable.TabIndex = 0;
+            this.ITable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ITable_CellContentClick);
             // 
             // tabPage3
             // 
@@ -178,20 +207,23 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // BG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form1";
+            this.Name = "BG";
             this.Text = "Botanical Garden";
+            this.Load += new System.EventHandler(this.BG_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ITable)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -207,5 +239,6 @@
         private TabPage tabPage2;
         private TabPage tabPage3;
         private Button button1;
+        private DataGridView ITable;
     }
 }
